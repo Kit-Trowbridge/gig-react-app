@@ -4,7 +4,14 @@ const Gig = (props) => {
             <h3 className="name">{props.name}</h3>
             <img className="image" src={props.image} alt={`promo image for ${props.name}`} />
             <p className="description">{props.description}</p>
-            <p className="timeAndDate">{props.timeAndDate.toString()}</p>
+            <p className="timeAndDate">{props.timeAndDate.toLocaleString([], {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'numeric',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+            })}</p>
             <p className="location">{props.location}</p>
         </div>
 
