@@ -1,29 +1,15 @@
-const timeAndDate = new Date("July 31, 2026 21:30:00")
-
-const Gig = () => {
+const Gig = (props) => {
     return(
         <div className="gig">   
-            <h3 className="name">Blood Orange</h3>
-            <img className="image" src="https://media.vogue.co.uk/photos/5f7af392a67cbe91f90e282b/2:3/w_2560%2Cc_limit/shutterstock_editorial_9930677ev.jpg" alt="promo image for Blood Orange" />
-            <p className="description">Alternative R&B</p>
-            <p className="timeAndDate">{timeAndDate.toDateString()}</p>
-            <p className="location">London, UK</p>
+            <h3 className="name">{props.name}</h3>
+            <img className="image" src={props.image} alt={`promo image for ${props.name}`} />
+            <p className="description">{props.description}</p>
+            <p className="timeAndDate">{props.timeAndDate.toString()}</p>
+            <p className="location">{props.location}</p>
         </div>
+
     )
 }
-
-// const Gig = (props) => {
-//     return(
-//         <div className="gig">   
-//             <h3 className="name">{props.name}</h3>
-//             <img className="image" src={props.image} alt={`promo image for ${props.name}`} />
-//             <p className="description">{props.description}</p>
-//             <p className="timeAndDate">{props.timeAndDate.toString()}</p>
-//             <p className="location">{props.location}</p>
-//         </div>
-
-//     )
-// }
 
 export default Gig
 
