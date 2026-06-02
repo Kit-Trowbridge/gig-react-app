@@ -1,6 +1,17 @@
-const Gig = () => {
+const Gig = (props) => {
+    return(
+        <div className="gig">   
+            <h3 className="name">{props.name}</h3>
+            <img className="image" src={props.image} alt={`promo image for ${props.name}`} />
+            <p className="description">{props.description}</p>
+            <p className="timeAndDate">{props.timeAndDate.toString()}</p>
+            <p className="location">{props.location}</p>
+        </div>
 
+    )
 }
+
+export default Gig;
 
 
 // Create a component called Gig, which contains information about a gig on the website. It should contain:
