@@ -3,16 +3,13 @@ import { useState } from "react";
 const FavouriteButton = () => {
     const [favourited, setFavourited] = useState(false);
 
-    const Heart = () => {
-        setFavourited(true);
-    }
-
-    const unHeart = () => {
-        setFavourited(false);
+    const changeHeartBasedOnCurrentState = () => {
+        // if favourited is already true, set it to false and vice versa
+        setFavourited(favourited ? false : true)
     }
 
     return(
-        <button onClick={favourited ? unHeart : Heart}> {favourited ? "❤️" : "♡"} </button>
+        <button onClick={changeHeartBasedOnCurrentState}> {favourited ? "❤️" : "♡"} </button>
     )
 
 }
