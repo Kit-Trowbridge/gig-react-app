@@ -2,13 +2,13 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import FavouriteButton from "../src/components/FavouriteButton";
 
-test("renders initial button to have text: ♡ false ", async () => {
+test("renders initial button to have empty heart", async () => {
     render(<FavouriteButton />);
-    expect(screen.getAllByRole("button")).toHaveTextContent("false");
+    expect(screen.getByRole("button")).toHaveTextContent("♡");
 });
 
-test("renders clicked button to have text: ♡ true ", async () => {
+test("renders clicked button to have red heart", async () => {
     render(<FavouriteButton />);
     await userEvent.click(screen.getByRole("button"));
-    expect(screen.getAllByRole("button")).toHaveTextContent("true");
+    expect(screen.getByRole("button")).toHaveTextContent("❤️");
 });

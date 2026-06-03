@@ -6,10 +6,11 @@ const FavouriteButton = () => {
     const Favourite = () => {
         setFavourited(true);
         console.log(favourited);
+        console.log(typeof favourited);
     }
 
     return(
-        <button onClick={Favourite}> ♡ {favourited} </button>
+        <button onClick={Favourite}> {favourited ? "❤️" : "♡"} </button>
     )
 
 }

@@ -1,3 +1,5 @@
+import FavouriteButton from "./FavouriteButton";
+
 const Gig = (props) => {
     return(
         <div className="gig">   
@@ -13,6 +15,7 @@ const Gig = (props) => {
                 minute: '2-digit',
             })}</p>
             <p className="location" data-testid="location">{props.location}</p>
+            <FavouriteButton />
         </div>
 
     )
