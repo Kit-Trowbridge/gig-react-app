@@ -12,3 +12,8 @@
     background: none;
     border: none;
 }
+
+.favourited {
+    border-color: #FF0090;
+    background-color: #faf2f7;
+}

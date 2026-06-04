@@ -6,7 +6,7 @@ const Gig = (props) => {
     const [favourited, setFavourited] = useState(false);
 
     return(
-        <div className="gig" style={{borderColor: favourited ? "#FF0090" : "black", backgroundColor: favourited ? "#faf2f7" : "white"}}>   
+        <div className={`gig${favourited ? " favourited" : ""}`}>   
             <h3 className="name">{props.name}</h3>
             <img className="image" src={props.image} alt={`promo image for ${props.name}`} />
             <p className="description" data-testid="description">{props.description}</p>
