@@ -10,7 +10,7 @@ test("renders initial button to have empty heart (not favourited)", async () => 
 test("renders clicked button to have red heart (favourited)", async () => {
     render(<FavouriteButton favourited={favourited} setFavourited={setFavourited}/>);
     await userEvent.click(screen.getByRole("button"));
-    expect(screen.getByRole("button")).toHaveTextContent("❤️");
+    expect(screen.getByRole("button")).toHaveTextContent("🩷");
 });
 
 test("renders unfavourited button again if favourited button is clicked", async () => {
