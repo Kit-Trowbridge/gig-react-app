@@ -41,13 +41,13 @@ const gigsArr = [
 ];
 
 
-
 const Gigs = () => {
     const [gigs, setGigs] = useState(gigsArr);
 
     const updateFavouritedOnGig = (id) => {
         const updatedGigs = gigs.map((gig) => {
             if (gig.id === id) {
+                // refactor to use spread
                 return {
                     id: gig.id,
                     name: gig.name,
@@ -61,7 +61,10 @@ const Gigs = () => {
                 return gig;
             }
         })
-        setGigs(updatedGigs)
+
+        const sortedGigs = [...updatedGigs].sort((a, b) => b.favourited - a.favourited);
+
+        setGigs(sortedGigs)
     }
 
     return (
