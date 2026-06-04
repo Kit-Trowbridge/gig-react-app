@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 const Gig = (props) => {
-    const [favourited, setFavourited] = useState(false);
+    const [favourited, setFavourited] = useState(false); 
 
     return(
         <div className={`gig${favourited ? " favourited" : ""}`}>   
