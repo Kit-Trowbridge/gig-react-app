@@ -1,6 +1,10 @@
 import FavouriteButton from "./FavouriteButton";
+import { useState } from "react";
+
 
 const Gig = (props) => {
+    const [favourited, setFavourited] = useState(false);
+
     return(
         <div className="gig">   
             <h3 className="name">{props.name}</h3>
@@ -15,7 +19,7 @@ const Gig = (props) => {
                 minute: '2-digit',
             })}</p>
             <p className="location" data-testid="location">{props.location}</p>
-            <FavouriteButton />
+            <FavouriteButton favourited={favourited} setFavourited={setFavourited}/>
         </div>
 
     )

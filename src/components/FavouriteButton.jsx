@@ -1,7 +1,5 @@
-import { useState } from "react";
 
-const FavouriteButton = () => {
-    const [favourited, setFavourited] = useState(false);
+const FavouriteButton = ({favourited, setFavourited}) => {
 
     return(
         <button onClick={() => setFavourited(!favourited)} className="favBtn"> {favourited ? "❤️" : "♡"} </button>
