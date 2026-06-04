@@ -1,7 +1,7 @@
 
-const FavouriteButton = ({favourited, setFavourited}) => {
+const FavouriteButton = ({favourited, updateFavouritedOnGig}) => {
     return(
-        <button onClick={() => setFavourited(!favourited)} className="favBtn"> {favourited ? "🩷" : "♡"} </button>
+        <button onClick={() => updateFavouritedOnGig()} className="favBtn"> {favourited ? "🩷" : "♡"} </button>
     )
 }
 

@@ -1,12 +1,9 @@
 import FavouriteButton from "./FavouriteButton";
-import { useState } from "react";
 
 
 const Gig = (props) => {
-    const [favourited, setFavourited] = useState(false); 
-
     return(
-        <div className={`gig${favourited ? " favourited" : ""}`}>   
+        <div className={`gig${props.favourited ? " favourited" : ""}`}>   
             <h3 className="name">{props.name}</h3>
             <img className="image" src={props.image} alt={`promo image for ${props.name}`} />
             <p className="description" data-testid="description">{props.description}</p>
@@ -19,7 +16,7 @@ const Gig = (props) => {
                 minute: '2-digit',
             })}</p>
             <p className="location" data-testid="location">{props.location}</p>
-            <FavouriteButton favourited={favourited} setFavourited={setFavourited}/>
+            <FavouriteButton favourited={props.favourited} updateFavouritedOnGig={props.updateFavouritedOnGig}/>
         </div>
 
     )

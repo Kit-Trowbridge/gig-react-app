@@ -45,18 +45,39 @@ const gigsArr = [
 const Gigs = () => {
     const [gigs, setGigs] = useState(gigsArr);
 
+    const updateFavouritedOnGig = (id) => {
+        const updatedGigs = gigs.map((gig) => {
+            if (gig.id === id) {
+                return {
+                    id: gig.id,
+                    name: gig.name,
+                    image: gig.image,
+                    description: gig.description,
+                    timeAndDate: gig.timeAndDate,
+                    location: gig.location,
+                    favourited: !gig.favourited
+                };
+            } else {
+                return gig;
+            }
+        })
+        setGigs(updatedGigs)
+    }
+
     return (
         <div className="gigs">
-            { gigsArr.map((gig) => {
+            { gigs.map((gig) => {
                 // return <Gig {...gig}/>
                 return (
                     <Gig
+                        id={gig.id}
                         name={gig.name}
                         image={gig.image}
                         description={gig.description}
                         timeAndDate={gig.timeAndDate}
                         location={gig.location}
                         favourited={gig.favourited}
+                        updateFavouritedOnGig={() => {updateFavouritedOnGig(gig.id)}}
                     />
                 )
             })}
