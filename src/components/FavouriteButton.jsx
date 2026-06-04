@@ -1,7 +1,7 @@
 
-const FavouriteButton = (props) => {
+const FavouriteButton = ({favourited, setFavourited}) => {
     return(
-        <button onClick={() => props.setFavourited(!props.favourited)} className="favBtn"> {props.favourited ? "🩷" : "♡"} </button>
+        <button onClick={() => setFavourited(!favourited)} className="favBtn"> {favourited ? "🩷" : "♡"} </button>
     )
 }
 
