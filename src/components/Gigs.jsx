@@ -62,7 +62,13 @@ const Gigs = () => {
             }
         })
 
-        const sortedGigs = [...updatedGigs].sort((a, b) => b.favourited - a.favourited);
+        const sortedGigs = [...updatedGigs].sort((a, b) => { 
+            if (a.favourited !== b.favourited) {
+                return b.favourited - a.favourited;
+            } else {
+                return a.timeAndDate - b.timeAndDate;
+            }
+        });
 
         setGigs(sortedGigs)
     }
