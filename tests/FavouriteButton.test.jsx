@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import FavouriteButton from "../src/components/FavouriteButton";
 import Gig from "../src/components/Gig";
 
 test("renders initial button to have empty heart (not favourited)", async () => {
