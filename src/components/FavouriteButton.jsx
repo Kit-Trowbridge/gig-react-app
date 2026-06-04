@@ -4,7 +4,7 @@ const FavouriteButton = () => {
     const [favourited, setFavourited] = useState(false);
 
     return(
-        <button onClick={() => setFavourited(!favourited)}> {favourited ? "❤️" : "♡"} </button>
+        <button onClick={() => setFavourited(!favourited)} className="favBtn"> {favourited ? "❤️" : "♡"} </button>
     )
 
 }
